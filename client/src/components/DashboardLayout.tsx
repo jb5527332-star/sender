@@ -90,12 +90,12 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         }`}
       >
         {/* Sidebar Header */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-gray-200">
+        <div className="h-16 flex items-center justify-between px-6 border-b">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+            <div className="login-brand-mark w-8 h-8 rounded-lg flex items-center justify-center">
               <Mail className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+            <span className="text-xl font-bold login-brand-title">
               EmailHub
             </span>
           </div>
@@ -123,9 +123,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         </nav>
 
         {/* Sidebar Footer */}
-        <div className="p-4 border-t border-gray-200">
+        <div className="p-4 border-t">
           <div className="flex items-center gap-3 p-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="login-brand-mark w-10 h-10 rounded-full flex items-center justify-center">
               <span className="text-white font-semibold text-sm">
                 {user?.name?.charAt(0).toUpperCase() || ""}
               </span>
@@ -155,7 +155,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-300"
               >
                 {sidebarOpen ? (
                   <X className="w-5 h-5" />
@@ -171,7 +171,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="relative">
                 <button
                   onClick={() => setUserMenuOpen(!userMenuOpen)}
-                  className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-lg"
+                  className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-lg text-gray-200"
                 >
                   <User className="w-5 h-5" />
                   <span className="text-sm font-medium">
