@@ -559,3 +559,18 @@ textarea::placeholder {
 .form-input:focus { background-color: #0c1728; }
 @media (max-width: 1023px) { .dashboard-container > div.transition-all { margin-left: 0 !important; } .sidebar { width: min(264px, calc(100vw - 3rem)); } }
 @media (min-width: 1024px) { .dashboard-container > div.transition-all { margin-left: 264px !important; } .dashboard-container > div.transition-all.ml-0 { margin-left: 0 !important; } }
+
+
+/* Shared page hierarchy and responsive workspace surfaces */
+.dashboard-container main { width: 100%; max-width: 1600px; margin-inline: auto; padding: clamp(1rem, 2.5vw, 2rem); }
+.dashboard-container main h1 { font-size: clamp(1.65rem, 2.3vw, 2.25rem); line-height: 1.15; letter-spacing: -0.035em; }
+.dashboard-container main h2 { letter-spacing: -0.025em; }
+.dashboard-container main > .space-y-6 > .dashboard-card:first-child { position: relative; isolation: isolate; overflow: hidden; border-radius: 1.25rem; background: radial-gradient(ellipse at 95% 0%, rgb(45 212 191 / 0.15), transparent 24rem), linear-gradient(120deg, rgb(19 41 59 / 0.96), rgb(16 29 46 / 0.94)); }
+.dashboard-container main > .space-y-6 > .dashboard-card:first-child::after { position: absolute; z-index: -1; top: -7rem; right: 7%; width: 18rem; height: 18rem; border: 1px solid rgb(153 246 228 / 0.08); border-radius: 9999px; box-shadow: 0 0 0 2.5rem rgb(153 246 228 / 0.025), 0 0 0 5rem rgb(153 246 228 / 0.018); content: ""; pointer-events: none; }
+.dashboard-container main .dashboard-card { border-radius: 1.125rem; border-color: rgb(111 139 168 / 0.16); background: linear-gradient(145deg, rgb(18 31 49 / 0.88), rgb(14 25 41 / 0.94)); box-shadow: 0 12px 34px rgb(0 0 0 / 0.14), inset 0 1px rgb(255 255 255 / 0.025); transition: border-color 180ms, box-shadow 180ms, transform 180ms; }
+.dashboard-container main .dashboard-card:hover { border-color: rgb(94 234 212 / 0.27); box-shadow: 0 16px 40px rgb(0 0 0 / 0.2), 0 0 26px rgb(20 184 166 / 0.055); }
+.dashboard-container main .border-b { border-color: rgb(111 139 168 / 0.15) !important; }
+.dashboard-container main .btn-primary { border: 1px solid rgb(153 246 228 / 0.2); border-radius: 0.7rem; font-weight: 600; box-shadow: 0 7px 18px rgb(20 184 166 / 0.12); transition: background-color 150ms, box-shadow 150ms, transform 150ms; }
+.dashboard-container main .btn-primary:hover { box-shadow: 0 9px 24px rgb(20 184 166 / 0.2); transform: translateY(-1px); }
+.dashboard-container main .form-input, .dashboard-container main .form-select { border-radius: 0.7rem; background-color: rgb(9 18 31 / 0.68); }
+.dashboard-container main .form-input:focus { background-color: #0c1728; }
