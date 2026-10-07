@@ -57,6 +57,15 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const { logout, user, isAdmin, isAuthenticated, isLoading } = useAuth();
 
   useEffect(() => {
+    setSidebarOpen(window.innerWidth >= 1024);
+  }, []);
+
+  useEffect(() => {
+    if (window.innerWidth < 1024) setSidebarOpen(false);
+    setUserMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
     if (!isLoading && !isAuthenticated) {
       router.push("/login");
     }
@@ -113,6 +122,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   key={item.name}
                   href={item.href}
                   className={`sidebar-nav-item ${isActive ? "active" : ""}`}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   <Icon className="w-5 h-5" />
                   <span>{item.name}</span>
@@ -145,17 +155,19 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Main Content Area */}
       <div
         className={`transition-all duration-300 ${
-          sidebarOpen ? "ml-[280px]" : "ml-0"
+          sidebarOpen ? "ml-[264px]" : "ml-0"
         }`}
       >
         {/* Header */}
-        <header className="sticky top-0 z-30 h-16 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <header className="dashboard-topbar sticky top-0 z-30 h-[4.5rem] backdrop-blur-xl border-b">
           <div className="h-full px-6 flex items-center justify-between">
             {/* Left Side */}
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors text-gray-300"
+                aria-label={sidebarOpen ? "Close navigation" : "Open navigation"}
+                aria-expanded={sidebarOpen}
+                className="p-2.5 hover:bg-gray-100 rounded-xl transition-colors text-gray-300"
               >
                 {sidebarOpen ? (
                   <X className="w-5 h-5" />
@@ -196,13 +208,15 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         </header>
 
         {/* Main Content */}
-        <main className="p-6">{children}</main>
+        <main className="dashboard-content">{children}</main>
       </div>
 
       {/* Mobile Overlay */}
       {sidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+        <button
+          type="button"
+          aria-label="Close navigation"
+          className="fixed inset-0 z-30 cursor-default bg-black/60 backdrop-blur-sm lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
