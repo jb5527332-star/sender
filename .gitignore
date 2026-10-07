@@ -1,0 +1,140 @@
+# Email Sender Application - Root .gitignore
+
+# ===== GENERAL =====
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== NODE.JS =====
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# ===== FRONTEND (Next.js) =====
+# Next.js build output
+client/.next/
+client/out/
+client/build/
+
+# Next.js cache
+client/.next/cache/
+
+# Vercel
+client/.vercel
+
+# TypeScript
+client/*.tsbuildinfo
+client/next-env.d.ts
+
+# Frontend dependencies
+client/node_modules/
+
+# Frontend environment files
+client/.env.local*
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+
+# Frontend temp files
+client/temp/
+
+# ===== BACKEND (Node.js/Express) =====
+# Backend build output
+server/dist/
+
+# Backend dependencies
+server/node_modules/
+
+# Backend environment files
+server/.env
+server/.env.local
+server/.env.development
+server/.env.test
+server/.env.production
+
+# Backend logs
+server/logs/
+server/*.log
+
+# Backend uploads/temp files
+server/uploads/
+server/temp/
+
+# ===== ENVIRONMENT & CONFIG =====
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Config files with sensitive data
+config/local.json
+config/production.json
+
+# ===== DEPLOYMENT =====
+# Railway
+.railway/
+
+# Vercel
+.vercel/
+
+# Docker
+Dockerfile.local
+docker-compose.override.yml
+
+# ===== MISC =====
+# Certificates
+*.pem
+*.key
+*.crt
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Package files
+*.tgz
+*.tar
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock

@@ -1,0 +1,9 @@
+{
+  "watch": ["**/*.ts"],
+  "ext": "ts,json",
+  "ignore": ["dist/**/*", "node_modules/**/*"],
+  "exec": "ts-node -r tsconfig-paths/register server.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
